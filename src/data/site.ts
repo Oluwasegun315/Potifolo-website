@@ -22,7 +22,7 @@ export const siteConfig = {
     "Full Stack Developer | Next.js Engineer | E-commerce & API Builder | Automation & Funnel Specialist",
   headline: "Full Stack Products That Look Premium & Perform",
   experience: "4+ Years · Full Stack",
-  tagline: "Turning Vision Into Digital Reality.",
+  tagline: "Full Stack Developer & Digital Growth Builder",
   subtext:
     "I design and build complete digital products — beautiful interfaces, solid backends, databases, and deployments — so your brand launches fast and converts with confidence.",
 };
