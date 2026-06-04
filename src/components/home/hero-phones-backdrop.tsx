@@ -1,8 +1,5 @@
-"use client";
-
 import type { ReactNode } from "react";
 import Image from "next/image";
-import { useState } from "react";
 import { FiHome, FiSearch, FiShoppingBag, FiUser } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 
@@ -21,33 +18,17 @@ function PhoneShell({ className, children }: { className?: string; children: Rea
 }
 
 function WebsiteScreen() {
-  const [failed, setFailed] = useState(false);
-
-  if (!failed) {
-    return (
-      <>
-        <Image
-          src="/projects/oluwasegun-clothing-hub.jpg"
-          alt=""
-          fill
-          className="object-cover object-top"
-          sizes="260px"
-          onError={() => setFailed(true)}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0812]/90 via-[#0a0812]/20 to-orange-500/10 mix-blend-overlay" />
-      </>
-    );
-  }
-
   return (
-    <div className="h-full bg-gradient-to-b from-violet-950 to-[#0a0812] p-3">
-      <div className="accent-gradient h-16 rounded-lg opacity-80" />
-      <div className="mt-2 grid grid-cols-2 gap-2">
-        {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="aspect-square rounded-md bg-white/10" />
-        ))}
-      </div>
-    </div>
+    <>
+      <Image
+        src="/projects/oluwasegun-clothing-hub.jpg"
+        alt=""
+        fill
+        className="object-cover object-top"
+        sizes="260px"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0812]/90 via-[#0a0812]/20 to-orange-500/10 mix-blend-overlay" />
+    </>
   );
 }
 
@@ -76,7 +57,7 @@ function AppScreen() {
   );
 }
 
-/** Decorative phones — background only, fire + electric glow */
+/** Decorative phones — background only, static glow (server-rendered). */
 export function HeroPhonesBackdrop() {
   return (
     <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden" aria-hidden>

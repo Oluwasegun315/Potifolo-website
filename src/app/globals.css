@@ -96,7 +96,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -195,32 +195,6 @@ body {
 
 .btn-premium:hover {
   filter: brightness(1.08);
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes scroll-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.animate-scroll-left {
-  animation: scroll-left 45s linear infinite;
-}
-
-.animate-scroll-right {
-  animation: scroll-right 45s linear infinite;
 }
 
 /* Hero: fire + electric energy (static, lightweight) */
