@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
+  <defs>
+    <linearGradient id="brand" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="0.45" stop-color="#C026D3"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="40" fill="url(#brand)"/>
+  <text
+    x="90"
+    y="88"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif"
+    font-size="68"
+    font-weight="800"
+    letter-spacing="-2"
+    fill="#FFFFFF"
+  >IE</text>
+  <text
+    x="90"
+    y="138"
+    text-anchor="middle"
+    font-family="ui-monospace, Consolas, Monaco, monospace"
+    font-size="28"
+    font-weight="700"
+    fill="rgba(255,255,255,0.92)"
+  >&lt;/&gt;</text>
+</svg>

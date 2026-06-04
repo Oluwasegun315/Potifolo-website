@@ -1,0 +1,130 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { FiMenu, FiX } from "react-icons/fi";
+import { navLinks, siteConfig } from "@/data/site";
+import { cn } from "@/lib/utils";
+
+export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  return (
+    <>
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-[100]",
+          scrolled ? "py-3" : "py-5"
+        )}
+      >
+        <nav
+          className={cn(
+            "mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8",
+            scrolled && "glass glow-border rounded-2xl py-3"
+          )}
+        >
+          <Link href="/" className="flex items-center gap-2.5">
+            <Image
+              src="/icon.svg"
+              alt=""
+              width={32}
+              height={32}
+              className="h-8 w-8 rounded-lg"
+              priority
+            />
+            <span className="font-display text-lg font-bold tracking-tight text-white sm:text-xl">
+              IE<span className="text-accent">.</span>
+            </span>
+          </Link>
+
+          <div className="hidden items-center gap-1 lg:flex">
+            {navLinks.slice(0, 8).map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "relative px-3 py-2 text-xs font-medium uppercase tracking-wider",
+                  pathname === link.href
+                    ? "text-accent"
+                    : "text-white/60 hover:text-white"
+                )}
+              >
+                {link.label}
+                {pathname === link.href && (
+                  <span className="absolute bottom-0 left-1/2 h-[2px] w-4 -translate-x-1/2 rounded-full bg-accent" />
+                )}
+              </Link>
+            ))}
+          </div>
+
+          <div className="hidden items-center gap-3 lg:flex">
+            <Link
+              href="/contact"
+              className="text-xs font-medium uppercase tracking-wider text-white/60 hover:text-white"
+            >
+              Contact
+            </Link>
+            <Link href="/hire-me" className="btn-premium rounded-full px-5 py-2 text-xs font-semibold text-white">
+              Hire Me
+            </Link>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white lg:hidden"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+          </button>
+        </nav>
+      </header>
+
+      {mobileOpen && (
+        <div className="fixed inset-0 z-[99] flex flex-col bg-[#0a0812] lg:hidden">
+          <div className="flex flex-1 flex-col justify-center gap-2 px-8 pt-24">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "block py-3 font-display text-2xl font-semibold",
+                  pathname === link.href ? "text-accent" : "text-white/80"
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/hire-me"
+              className="btn-premium mt-6 inline-flex w-fit rounded-full px-8 py-3 font-semibold text-white"
+            >
+              Hire Me
+            </Link>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
