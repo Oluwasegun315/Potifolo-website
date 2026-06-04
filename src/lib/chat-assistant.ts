@@ -15,6 +15,7 @@ const quickTopics = [
   { keys: ["project", "portfolio", "work", "example", "sample", "oluwasegun", "store"], id: "projects" },
   { keys: ["skill", "stack", "tech", "next.js", "full stack", "developer"], id: "skills" },
   { keys: ["trust", "reliable", "safe", "legit", "why you", "choose"], id: "trust" },
+  { keys: ["email", "gmail", "mail", "contact", "reach you", "call"], id: "contact" },
   { keys: ["hello", "hi", "hey", "good morning", "good evening"], id: "greeting" },
 ];
 
@@ -72,9 +73,9 @@ export function getChatReply(userMessage: string): string {
 }
 
 export const chatQuickActions = [
+  { label: "Email me", message: "What is your email address?" },
   { label: "Services", message: "What services do you offer?" },
   { label: "Timeline", message: "How long does a project take?" },
-  { label: "Pricing", message: "How does pricing work?" },
   { label: "Hire you", message: "I want to hire you for a project" },
 ];
 

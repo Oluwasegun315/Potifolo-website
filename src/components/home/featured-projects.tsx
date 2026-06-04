@@ -18,7 +18,7 @@ export function FeaturedProjects() {
         />
         <p className="-mt-10 mb-10 text-center">
           <a
-            href={siteConfig.social.github}
+            href="https://github.com/Oluwasegun315/Potifolo-website"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-bright"

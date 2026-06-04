@@ -10,6 +10,10 @@ import { ProofStrip } from "@/components/home/proof-strip";
 import { FeaturedProjects } from "@/components/home/featured-projects";
 import { ClientPromise } from "@/components/home/client-promise";
 import { HomeTestimonials } from "@/components/home/home-testimonials";
+import { GlobalReach } from "@/components/home/global-reach";
+import { PricingPreview } from "@/components/home/pricing-preview";
+import { DeliverablesSection } from "@/components/home/deliverables-section";
+import { ContactStrip } from "@/components/home/contact-strip";
 import { FaqSection } from "@/components/home/faq-section";
 import { CtaSection } from "@/components/home/cta-section";
 import { PageTransition } from "@/components/layout/page-transition";
@@ -22,13 +26,17 @@ export default function HomePage() {
       <TrustSignals />
       <HomeAbout />
       <FullStackSection />
+      <GlobalReach />
       <WhyHireSection />
+      <DeliverablesSection />
       <WorkProcess />
       <IntroSection />
+      <PricingPreview />
       <ProofStrip />
       <FeaturedProjects />
       <ClientPromise />
       <HomeTestimonials />
+      <ContactStrip />
       <FaqSection />
       <CtaSection />
     </PageTransition>

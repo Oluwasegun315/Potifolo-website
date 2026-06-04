@@ -77,7 +77,7 @@ export function Hero() {
               View My Work
             </MagneticButton>
             <Link
-              href={siteConfig.social.github}
+              href="https://github.com/Oluwasegun315/Potifolo-website"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-2 text-sm text-white/45 hover:text-accent"

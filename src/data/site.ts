@@ -7,11 +7,12 @@ export const siteConfig = {
     "Full stack developer building premium websites, stores, and growth systems — from React frontends to APIs, databases, and live deployment. 4+ years shipping end-to-end products that look exceptional and convert.",
   shortDescription:
     "Full stack developer — UI, backend, databases & launch-ready products.",
-  email: "hello@idowuelijah.com",
+  email: "idowuoluwasegun197@gmail.com",
   whatsapp: "https://wa.me/2348000000000",
   calendly: "https://calendly.com/idowuelijah",
+  siteUrl: "https://github.com/Oluwasegun315/Potifolo-website",
   social: {
-    github: "https://github.com",
+    github: "https://github.com/Oluwasegun315",
     linkedin: "https://linkedin.com",
     twitter: "https://twitter.com",
     instagram: "https://instagram.com",

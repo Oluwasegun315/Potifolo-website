@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         reply:
-          "Something went wrong on my side. Please use the Hire Me page or email hello@idowuelijah.com — you'll get a personal reply within 24 hours.",
+          "Something went wrong on my side. Please use the Hire Me page or email idowuoluwasegun197@gmail.com — you'll get a personal reply within 24 hours.",
       },
       { status: 500 }
     );

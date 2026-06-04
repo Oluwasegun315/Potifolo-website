@@ -11,7 +11,7 @@ if (-not $porcelain) {
 
 git add -A
 $msg = "Auto-sync: portfolio updates $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
-git -c user.name="Idowu Elijah" -c user.email="hello@idowuelijah.com" commit -m $msg
+git -c user.name="Idowu Elijah" -c user.email="idowuoluwasegun197@gmail.com" commit -m $msg
 git push origin main
 
 Write-Host "Pushed to GitHub origin main"

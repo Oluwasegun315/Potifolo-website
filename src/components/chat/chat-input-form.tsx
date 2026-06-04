@@ -49,23 +49,27 @@ export const ChatInputForm = memo(function ChatInputForm({ loading, onSend }: Ch
           <Send className="h-4 w-4" />
         </button>
       </form>
-      <div className="mt-2 flex flex-wrap gap-2 text-center">
-        <Link href="/hire-me" className="text-[10px] font-medium text-accent hover:underline">
-          Hire Me
-        </Link>
-        <span className="text-white/20">·</span>
-        <Link href="/contact" className="text-[10px] font-medium text-white/50 hover:text-accent">
-          Contact
-        </Link>
-        <span className="text-white/20">·</span>
+      <div className="mt-2 space-y-1 text-center">
         <a
-          href={siteConfig.whatsapp}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[10px] font-medium text-white/50 hover:text-accent"
+          href={`mailto:${siteConfig.email}`}
+          className="block truncate text-[11px] font-medium text-violet-300 hover:text-accent"
         >
-          WhatsApp
+          {siteConfig.email}
         </a>
+        <div className="flex flex-wrap justify-center gap-2">
+          <Link href="/hire-me" className="text-[10px] font-medium text-accent hover:underline">
+            Hire Me
+          </Link>
+          <span className="text-white/20">·</span>
+          <a
+            href={siteConfig.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[10px] font-medium text-white/50 hover:text-accent"
+          >
+            WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   );

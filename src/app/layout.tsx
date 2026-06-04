@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "Automation Expert",
     "Brand Growth",
   ],
-  authors: [{ name: siteConfig.name, url: "https://idowuelijah.com" }],
+  authors: [{ name: siteConfig.name, url: siteConfig.siteUrl }],
   creator: siteConfig.name,
   openGraph: {
     title: siteConfig.title,
