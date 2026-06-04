@@ -1,4 +1,4 @@
-# Idowu Elijah — Portfolio
+# Potifolo Website — Idowu Elijah Portfolio
 
 Premium full-stack developer portfolio built with Next.js, TypeScript, and Tailwind CSS.
 
@@ -26,10 +26,9 @@ npm start
 
 ## Deploy on Vercel
 
-1. Push this repo to GitHub.
-2. Import the project in [Vercel](https://vercel.com/new).
-3. Framework preset: **Next.js** (defaults are fine).
-4. Deploy.
+1. Import this repo in [Vercel](https://vercel.com/new).
+2. Framework preset: **Next.js** (defaults are fine).
+3. Deploy.
 
 ## Project structure
 
