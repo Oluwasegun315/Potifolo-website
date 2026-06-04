@@ -42,3 +42,22 @@ npm start
 - Profile & copy: `src/data/site.ts`
 - Projects: `src/data/projects.ts`
 - Profile photo: `public/profile/idowu.png`
+- Chat answers: `src/lib/chat-assistant.ts`
+
+## Auto-sync to GitHub
+
+**Option A — Cursor (recommended):** This repo includes `.cursor/hooks.json`. After each Agent session ends, changes are committed and pushed to GitHub automatically. Restart Cursor once if hooks do not run.
+
+**Option B — Manual:** Run `npm run sync` to commit and push all changes.
+
+**Option C — After every git commit:** One-time setup:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Then any `git commit` also runs `git push`.
+
+## Portfolio chat assistant
+
+The floating chat button uses `/api/chat` with smart answers about services, pricing, timeline, and hiring — no API keys required. Works on Vercel out of the box.

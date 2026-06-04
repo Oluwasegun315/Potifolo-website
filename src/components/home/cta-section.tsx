@@ -1,3 +1,4 @@
+import { Clock, ShieldCheck } from "lucide-react";
 import { Code2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,6 +21,16 @@ export function CtaSection() {
               From design to database to deployment — let&apos;s build something premium that
               converts visitors into paying clients.
             </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-white/45">
+              <span className="inline-flex items-center gap-1.5">
+                <Clock className="h-3.5 w-3.5 text-violet-400" />
+                Reply within 24 hours
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck className="h-3.5 w-3.5 text-violet-400" />
+                Clear milestones · no surprises
+              </span>
+            </div>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <MagneticButton href="/hire-me">Start Your Project</MagneticButton>
               <MagneticButton href="/projects" variant="outline">

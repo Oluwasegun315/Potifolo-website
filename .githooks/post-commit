@@ -1,0 +1,3 @@
+#!/bin/sh
+# After every local commit, push to GitHub (enable with: git config core.hooksPath .githooks)
+git push origin main 2>/dev/null || true

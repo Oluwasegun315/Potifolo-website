@@ -276,7 +276,8 @@ body {
   .hero-portrait-ring,
   .hero-energy-sparks,
   .animate-scroll-left,
-  .animate-scroll-right {
+  .animate-scroll-right,
+  .animate-pulse {
     animation: none !important;
   }
 }

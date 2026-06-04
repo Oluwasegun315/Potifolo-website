@@ -81,13 +81,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
+        <div className="mt-12 flex flex-wrap justify-center gap-6 border-t border-white/5 pt-8 text-center text-[11px] uppercase tracking-wider text-white/35">
+          <span>Secure HTTPS delivery</span>
+          <span>·</span>
+          <span>24h response goal</span>
+          <span>·</span>
+          <span>Production-ready code</span>
+        </div>
+
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-xs text-white/30">
             © {year} {siteConfig.name}. Crafted with precision.
           </p>
-          <p className="text-xs text-white/30">
-            Turning Vision Into Digital Reality
-          </p>
+          <div className="flex gap-4 text-xs">
+            <Link href="/hire-me" className="text-white/40 hover:text-accent">
+              Hire Me
+            </Link>
+            <Link href="/contact" className="text-white/40 hover:text-accent">
+              Contact
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

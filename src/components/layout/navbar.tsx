@@ -85,7 +85,11 @@ export function Navbar() {
             >
               Contact
             </Link>
-            <Link href="/hire-me" className="btn-premium rounded-full px-5 py-2 text-xs font-semibold text-white">
+            <Link
+              href="/hire-me"
+              className="btn-premium flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold text-white"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
               Hire Me
             </Link>
           </div>

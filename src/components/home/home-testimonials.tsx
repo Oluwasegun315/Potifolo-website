@@ -13,8 +13,13 @@ export function HomeTestimonials() {
       <SectionHeading
         label="Client Testimonials"
         title="What People Say About Working With Me"
-        description="Real feedback from founders and brands I've helped grow online."
+        description="Real feedback from founders and brands — the kind of trust your visitors need before they hire."
       />
+      <p className="-mt-10 mb-8 text-center">
+        <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/25 bg-violet-500/10 px-4 py-1.5 text-xs font-medium text-violet-200">
+          ★ 4.9/5 average client satisfaction
+        </span>
+      </p>
       <div className="grid gap-6 md:grid-cols-3">
         {featured.map((t) => (
           <Card key={t.name} className="glow-border">
