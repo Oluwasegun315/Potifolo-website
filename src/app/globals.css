@@ -198,6 +198,67 @@ body {
   filter: brightness(1.08);
 }
 
+/* Hero-only marquee — gratitude-digital-studio style (not disabled site-wide) */
+@keyframes hero-marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.hero-section .hero-marquee-left {
+  animation: hero-marquee-left 55s linear infinite;
+  will-change: transform;
+}
+
+.hero-section .hero-marquee-right {
+  animation: hero-marquee-right 55s linear infinite;
+  will-change: transform;
+}
+
+.hero-section .hero-title {
+  color: #14101f;
+}
+
+.dark .hero-section .hero-title {
+  color: #ffffff;
+}
+
+.hero-section .hero-tagline {
+  color: rgb(20 16 31 / 0.88);
+}
+
+.dark .hero-section .hero-tagline {
+  color: rgb(255 255 255 / 0.9);
+}
+
+.hero-section .hero-desc {
+  color: rgb(20 16 31 / 0.62);
+}
+
+.dark .hero-section .hero-desc {
+  color: rgb(255 255 255 / 0.6);
+}
+
+.hero-section .hero-scroll-hint {
+  color: rgb(20 16 31 / 0.4);
+}
+
+.dark .hero-section .hero-scroll-hint {
+  color: rgb(255 255 255 / 0.35);
+}
+
 /* Hero: fire + electric energy (static, lightweight) */
 .hero-energy-core {
   background:
@@ -240,7 +301,7 @@ body {
   border-radius: 3px;
 }
 
-/* Performance: disable decorative motion site-wide */
+/* Performance: disable decorative motion site-wide (hero marquee excluded) */
 @media (prefers-reduced-motion: no-preference) {
   .animate-float,
   .animate-pulse-glow,
@@ -264,6 +325,11 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero-section .hero-marquee-left,
+  .hero-section .hero-marquee-right {
+    animation: none !important;
   }
 }
 

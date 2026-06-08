@@ -1,77 +1,81 @@
-import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
-import { Code2, Database, LayoutTemplate, Server } from "lucide-react";
-import { ProfilePhoto } from "@/components/ui/profile-photo";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { siteConfig } from "@/data/site";
+import Image from "next/image";
+import { projects } from "@/data/projects";
 
-const stackPreview = [
-  { label: "Frontend", icon: LayoutTemplate },
-  { label: "Backend", icon: Server },
-  { label: "Database", icon: Database },
-];
+type ShowcaseItem = {
+  image: string;
+  type: "phone" | "desktop";
+};
 
+const pool: ShowcaseItem[] = projects.slice(0, 6).flatMap((p, i) => [
+  { image: p.image, type: i % 2 === 0 ? "phone" : "desktop" },
+  { image: p.image, type: i % 2 === 1 ? "phone" : "desktop" },
+]);
+
+function PhoneMockup({ image }: { image: string }) {
+  return (
+    <div className="relative shrink-0 rounded-[1.35rem] border-[3px] border-zinc-600/90 bg-zinc-950 p-[4px] shadow-[0_12px_40px_rgba(0,0,0,0.45)] dark:border-zinc-700">
+      <div className="absolute left-1/2 top-2 z-10 h-1 w-9 -translate-x-1/2 rounded-full bg-zinc-600" />
+      <div className="relative h-48 w-[92px] overflow-hidden rounded-[1.1rem] sm:h-56 sm:w-[108px]">
+        <Image src={image} alt="" fill className="object-cover object-top" sizes="108px" />
+        <div className="absolute inset-0 bg-gradient-to-t from-violet-900/20 to-transparent" />
+      </div>
+    </div>
+  );
+}
+
+function DesktopMockup({ image }: { image: string }) {
+  return (
+    <div className="relative shrink-0 overflow-hidden rounded-xl border border-white/20 bg-zinc-950 shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
+      <div className="flex items-center gap-1.5 border-b border-white/10 bg-zinc-800/95 px-3 py-2">
+        <span className="h-2 w-2 rounded-full bg-red-400/90" />
+        <span className="h-2 w-2 rounded-full bg-amber-400/90" />
+        <span className="h-2 w-2 rounded-full bg-emerald-400/90" />
+        <span className="ml-2 h-2 flex-1 max-w-[80px] rounded-full bg-white/10" />
+      </div>
+      <div className="relative h-36 w-56 sm:h-40 sm:w-64">
+        <Image src={image} alt="" fill className="object-cover object-top" sizes="256px" />
+      </div>
+    </div>
+  );
+}
+
+function ShowcaseCard({ item }: { item: ShowcaseItem }) {
+  return item.type === "phone" ? <PhoneMockup image={item.image} /> : <DesktopMockup image={item.image} />;
+}
+
+function MarqueeRow({ items, reverse = false }: { items: ShowcaseItem[]; reverse?: boolean }) {
+  const doubled = [...items, ...items];
+
+  return (
+    <div className="overflow-hidden">
+      <div
+        className={`hero-marquee-track flex w-max gap-4 sm:gap-5 ${reverse ? "hero-marquee-right" : "hero-marquee-left"}`}
+      >
+        {doubled.map((item, i) => (
+          <ShowcaseCard key={`${item.image}-${item.type}-${i}`} item={item} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const rowA = pool.slice(0, 8);
+const rowB = [...pool.slice(4), ...pool.slice(0, 4)];
+const rowC = [...pool.slice(2), ...pool.slice(0, 2)];
+
+/** Animated phones + websites — hero only, gratitude-digital-studio style */
 export function HeroShowcase() {
   return (
-    <div className="relative">
-      <Card className="glow-border overflow-hidden border-violet-500/20 bg-[#12101c]/90">
-        <CardContent className="p-6 sm:p-8">
-          <div className="flex flex-col items-center text-center">
-            <ProfilePhoto size="md" priority className="mb-5 ring-2 ring-violet-500/30" />
-            <Badge variant="gradient" className="mb-3 gap-1.5 normal-case tracking-normal">
-              <Code2 className="h-3 w-3" />
-              Full Stack Developer
-            </Badge>
-            <p className="font-display text-xl font-bold text-white sm:text-2xl">
-              {siteConfig.name}
-            </p>
-            <p className="mt-1 max-w-xs text-sm text-white/50">
-              UI → API → Database → Live on Vercel
-            </p>
-          </div>
+    <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden" aria-hidden>
+      <div className="absolute inset-0 flex flex-col justify-center gap-4 py-20 opacity-[0.72] sm:gap-5 sm:opacity-[0.78] dark:opacity-[0.58] dark:sm:opacity-[0.65]">
+        <MarqueeRow items={rowA} />
+        <MarqueeRow items={rowB} reverse />
+        <MarqueeRow items={rowC} />
+      </div>
 
-          <Separator className="my-6" />
-
-          <div className="grid grid-cols-3 gap-2">
-            {stackPreview.map(({ label, icon: Icon }) => (
-              <div
-                key={label}
-                className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-2 py-3 text-center"
-              >
-                <Icon className="mx-auto mb-1.5 h-4 w-4 text-violet-300" />
-                <p className="text-[10px] font-medium uppercase tracking-wider text-white/50">
-                  {label}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-5 grid grid-cols-2 gap-3">
-            <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-3 text-center">
-              <p className="font-display text-2xl font-bold text-white">
-                4.9<span className="text-sm text-accent">/5</span>
-              </p>
-              <p className="text-[10px] uppercase tracking-wider text-white/40">Client rating</p>
-            </div>
-            <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-3 text-center">
-              <p className="font-display text-2xl font-bold text-white">
-                2–4<span className="text-sm text-accent"> wk</span>
-              </p>
-              <p className="text-[10px] uppercase tracking-wider text-white/40">Go-live speed</p>
-            </div>
-          </div>
-
-          <Link
-            href="/projects/oluwasegun-clothing-hub"
-            className="mt-6 flex items-center justify-center gap-2 rounded-xl border border-violet-500/25 bg-violet-500/10 py-3 text-sm text-white/80 transition-colors hover:bg-violet-500/20 hover:text-white"
-          >
-            Featured build — Oluwasegun Hub
-            <FiArrowUpRight size={14} />
-          </Link>
-        </CardContent>
-      </Card>
+      {/* Center vignette — keeps text readable, edges show mockups */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_42%,rgba(248,246,252,0.94)_0%,rgba(248,246,252,0.55)_45%,rgba(248,246,252,0.15)_75%,transparent_100%)] dark:bg-[radial-gradient(ellipse_55%_50%_at_50%_42%,rgba(10,8,18,0.92)_0%,rgba(10,8,18,0.65)_45%,rgba(10,8,18,0.2)_75%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f8f6fc]/60 via-transparent to-[#f8f6fc]/85 dark:from-[#0a0812]/50 dark:to-[#0a0812]/90" />
     </div>
   );
 }
