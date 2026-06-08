@@ -13,7 +13,7 @@ export function Hero() {
       <HeroShowcase />
 
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center">
-        <div className="hero-content-panel w-full max-w-3xl rounded-3xl border border-violet-500/15 bg-white/55 px-6 py-10 shadow-[0_20px_60px_rgba(139,92,246,0.12)] backdrop-blur-md sm:px-10 sm:py-12 dark:border-white/10 dark:bg-[#0a0812]/55 dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+        <div className="hero-content-panel w-full max-w-3xl rounded-3xl px-6 py-10 sm:px-10 sm:py-12">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-violet-500/35 bg-gradient-to-br from-violet-600/35 to-fuchsia-600/25 shadow-[0_0_40px_rgba(139,92,246,0.3)] sm:h-20 sm:w-20">
             <Image
               src="/icon.svg"

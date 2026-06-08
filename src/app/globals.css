@@ -227,28 +227,47 @@ body {
   will-change: transform;
 }
 
+.hero-section .hero-content-panel {
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow:
+    0 24px 64px rgba(139, 92, 246, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  backdrop-filter: blur(12px);
+}
+
+.dark .hero-section .hero-content-panel {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(10, 8, 18, 0.94);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+
 .hero-section .hero-title {
-  color: #14101f;
+  color: #0f0b18;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .dark .hero-section .hero-title {
   color: #ffffff;
+  text-shadow: none;
 }
 
 .hero-section .hero-tagline {
-  color: rgb(20 16 31 / 0.88);
+  color: #1a1428;
 }
 
 .dark .hero-section .hero-tagline {
-  color: rgb(255 255 255 / 0.9);
+  color: rgb(255 255 255 / 0.95);
 }
 
 .hero-section .hero-desc {
-  color: rgb(20 16 31 / 0.62);
+  color: #3d3550;
 }
 
 .dark .hero-section .hero-desc {
-  color: rgb(255 255 255 / 0.6);
+  color: rgb(255 255 255 / 0.72);
 }
 
 .hero-section .hero-scroll-hint {
@@ -410,7 +429,12 @@ html:not(.dark) .text-white\/55 {
 }
 
 html:not(.dark) .text-white\/50 {
-  color: rgb(26 22 37 / 0.5);
+  color: rgb(26 22 37 / 0.65);
+}
+
+html:not(.dark) main p,
+html:not(.dark) main li {
+  color: rgb(26 22 37 / 0.78);
 }
 
 html:not(.dark) .text-white\/45 {

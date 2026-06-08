@@ -16,14 +16,14 @@ export function HeroMiniReviews() {
           </div>
           <div className="min-w-0 text-left">
             <div className="flex items-center gap-1.5">
-              <span className="truncate text-sm font-semibold text-white">{t.name}</span>
+              <span className="truncate text-sm font-semibold text-zinc-900 dark:text-white">{t.name}</span>
               <div className="flex shrink-0">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-3 w-3 fill-violet-400 text-violet-400" />
                 ))}
               </div>
             </div>
-            <p className="truncate text-xs text-white/50">{t.content}</p>
+            <p className="truncate text-xs text-zinc-600 dark:text-white/55">{t.content}</p>
           </div>
         </div>
       ))}

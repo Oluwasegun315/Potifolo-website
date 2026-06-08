@@ -67,15 +67,15 @@ const rowC = [...pool.slice(2), ...pool.slice(0, 2)];
 export function HeroShowcase() {
   return (
     <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden" aria-hidden>
-      <div className="absolute inset-0 flex flex-col justify-center gap-4 py-20 opacity-[0.72] sm:gap-5 sm:opacity-[0.78] dark:opacity-[0.58] dark:sm:opacity-[0.65]">
+      <div className="absolute inset-0 flex scale-[0.92] flex-col justify-center gap-4 py-20 opacity-[0.38] blur-[0.5px] sm:gap-5 sm:opacity-[0.42] dark:opacity-[0.32] dark:sm:opacity-[0.36]">
         <MarqueeRow items={rowA} />
         <MarqueeRow items={rowB} reverse />
         <MarqueeRow items={rowC} />
       </div>
 
-      {/* Center vignette — keeps text readable, edges show mockups */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_42%,rgba(248,246,252,0.94)_0%,rgba(248,246,252,0.55)_45%,rgba(248,246,252,0.15)_75%,transparent_100%)] dark:bg-[radial-gradient(ellipse_55%_50%_at_50%_42%,rgba(10,8,18,0.92)_0%,rgba(10,8,18,0.65)_45%,rgba(10,8,18,0.2)_75%,transparent_100%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f8f6fc]/60 via-transparent to-[#f8f6fc]/85 dark:from-[#0a0812]/50 dark:to-[#0a0812]/90" />
+      {/* Strong center mask — text stays crisp, mockups visible at edges only */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_48%_44%_at_50%_40%,rgba(248,246,252,0.99)_0%,rgba(248,246,252,0.88)_38%,rgba(248,246,252,0.45)_62%,transparent_100%)] dark:bg-[radial-gradient(ellipse_48%_44%_at_50%_40%,rgba(10,8,18,0.97)_0%,rgba(10,8,18,0.82)_38%,rgba(10,8,18,0.4)_62%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f8f6fc]/70 via-transparent to-[#f8f6fc]/90 dark:from-[#0a0812]/60 dark:to-[#0a0812]/92" />
     </div>
   );
 }
