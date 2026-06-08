@@ -4,6 +4,7 @@ import { PageTransition } from "@/components/layout/page-transition";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Progress, ProgressLabel } from "@/components/ui/progress";
 import { skillCategories } from "@/data/skills";
 
 export default function SkillsPage() {
@@ -29,6 +30,15 @@ export default function SkillsPage() {
                   <CardDescription>{cat.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
+                  <Progress
+                    value={cat.level}
+                    className="mb-4 gap-2 [&_[data-slot=progress-indicator]]:bg-violet-500"
+                  >
+                    <div className="flex w-full items-center justify-between">
+                      <ProgressLabel className="text-xs text-white/50">Proficiency</ProgressLabel>
+                      <span className="text-xs font-medium text-violet-300">{cat.level}%</span>
+                    </div>
+                  </Progress>
                   <div className="flex flex-wrap gap-2">
                     {cat.skills.map((skill) => (
                       <Badge key={skill} variant="muted" className="normal-case tracking-normal">

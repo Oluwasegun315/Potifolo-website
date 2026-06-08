@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FiArrowUpRight, FiExternalLink, FiGithub } from "react-icons/fi";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectCover } from "@/components/projects/project-cover";
+import { FeaturedProjectTitle } from "@/components/projects/featured-project-title";
 import { getFeaturedProjects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 
@@ -49,9 +50,7 @@ export function FeaturedProjects() {
                 <span className="text-xs font-medium uppercase tracking-wider text-accent">
                   {project.category}
                 </span>
-                <h3 className="font-display mt-2 text-xl font-bold text-white">
-                  {project.title}
-                </h3>
+                <FeaturedProjectTitle title={project.title} technologies={project.technologies} />
                 <p className="mt-2 line-clamp-2 text-sm text-white/60">
                   {project.description}
                 </p>

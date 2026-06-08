@@ -5,7 +5,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 import { siteConfig } from "@/data/site";
+import { toast } from "sonner";
 
 const projectTypes = [
   "Website",
@@ -38,6 +40,9 @@ export function ProjectRequestForm() {
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company || "N/A"}\nProject Type: ${form.projectType}\nBudget: ${form.budget}\nTimeline: ${form.timeline}\n\nDescription:\n${form.description}`
     );
+    toast.info("Opening your email app with your project brief…", {
+      description: "Send the email and I'll reply within 24 hours.",
+    });
     window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
@@ -151,9 +156,9 @@ export function ProjectRequestForm() {
             </div>
           </div>
           <div className="space-y-2">
-            <label htmlFor="description" className="text-sm text-white/60">
+            <Label htmlFor="description" className="text-white/60">
               Project Description *
-            </label>
+            </Label>
             <Textarea
               id="description"
               required

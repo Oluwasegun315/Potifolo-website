@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/layout/page-transition";
 import { ProfilePhoto } from "@/components/ui/profile-photo";
 import { siteConfig } from "@/data/site";
+import { toast } from "sonner";
 
 function FloatingInput({
   id,
@@ -57,6 +58,9 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    toast.success("Message received! I'll reply within 24 hours.", {
+      description: `Thanks for reaching out — check ${siteConfig.email} for my reply.`,
+    });
   };
 
   return (

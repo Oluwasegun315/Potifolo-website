@@ -6,6 +6,7 @@ import { FiSearch, FiArrowUpRight, FiGithub, FiExternalLink } from "react-icons/
 import { projects, projectCategories } from "@/data/projects";
 import { ProjectCover } from "@/components/projects/project-cover";
 import { Input } from "@/components/ui/input";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function ProjectGrid() {
   const [category, setCategory] = useState("All");
@@ -35,22 +36,22 @@ export function ProjectGrid() {
             className="pl-10"
           />
         </div>
-        <div className="flex flex-wrap gap-2">
-          {projectCategories.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => setCategory(cat)}
-              className={`rounded-full px-4 py-1.5 text-xs font-medium ${
-                category === cat
-                  ? "accent-gradient text-white"
-                  : "border border-white/10 text-white/60"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+        <Tabs value={category} onValueChange={setCategory}>
+          <TabsList
+            variant="line"
+            className="h-auto flex-wrap justify-start gap-1 bg-transparent p-0"
+          >
+            {projectCategories.map((cat) => (
+              <TabsTrigger
+                key={cat}
+                value={cat}
+                className="rounded-full px-4 py-1.5 text-xs font-medium data-active:accent-gradient data-active:text-white"
+              >
+                {cat}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
       </div>
 
       <div className="columns-1 gap-6 sm:columns-2 lg:columns-3">

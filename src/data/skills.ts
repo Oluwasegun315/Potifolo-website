@@ -15,6 +15,8 @@ export type SkillCategory = {
   description: string;
   icon: typeof LayoutTemplate;
   skills: string[];
+  /** Proficiency for progress display (0–100) */
+  level: number;
 };
 
 export const skillCategories: SkillCategory[] = [
@@ -24,6 +26,7 @@ export const skillCategories: SkillCategory[] = [
     description: "End-to-end web products — UI, APIs, databases, and deployment.",
     icon: LayoutTemplate,
     skills: ["Next.js", "React", "TypeScript", "Node.js", "REST APIs", "Vercel"],
+    level: 95,
   },
   {
     slug: "frontend-excellence",
@@ -31,6 +34,7 @@ export const skillCategories: SkillCategory[] = [
     description: "Premium interfaces that feel fast, polished, and conversion-ready.",
     icon: Zap,
     skills: ["Tailwind CSS", "Responsive UI", "Component systems", "Accessibility", "Figma handoff"],
+    level: 92,
   },
   {
     slug: "backend-architecture",
@@ -38,6 +42,7 @@ export const skillCategories: SkillCategory[] = [
     description: "Secure backends, auth, payments, and integrations that scale.",
     icon: Server,
     skills: ["Node.js", "Supabase", "Stripe", "Webhooks", "Auth flows", "API design"],
+    level: 90,
   },
   {
     slug: "database-design",
@@ -45,6 +50,7 @@ export const skillCategories: SkillCategory[] = [
     description: "Structured data models and real-time features built to last.",
     icon: Database,
     skills: ["PostgreSQL", "Supabase", "Schema design", "Migrations", "Row-level security"],
+    level: 88,
   },
   {
     slug: "ecommerce-funnels",
@@ -52,6 +58,7 @@ export const skillCategories: SkillCategory[] = [
     description: "Stores and funnels engineered to convert visitors into buyers.",
     icon: ShoppingBag,
     skills: ["Shopify", "Checkout UX", "Landing pages", "A/B-ready layouts", "Cart recovery"],
+    level: 91,
   },
   {
     slug: "automation-growth",
@@ -59,6 +66,7 @@ export const skillCategories: SkillCategory[] = [
     description: "Workflows and systems that save time and grow revenue after launch.",
     icon: Cpu,
     skills: ["Zapier", "Make.com", "Email automation", "CRM sync", "Analytics setup"],
+    level: 87,
   },
   {
     slug: "security-performance",
@@ -66,6 +74,7 @@ export const skillCategories: SkillCategory[] = [
     description: "Production-ready apps that stay fast, safe, and reliable.",
     icon: Shield,
     skills: ["Auth hardening", "Core Web Vitals", "SEO basics", "Error handling", "Monitoring"],
+    level: 89,
   },
   {
     slug: "brand-strategy",
@@ -73,5 +82,6 @@ export const skillCategories: SkillCategory[] = [
     description: "Positioning and messaging that make your digital presence unforgettable.",
     icon: Filter,
     skills: ["Brand voice", "UX strategy", "Content structure", "Conversion copy", "Visual systems"],
+    level: 86,
   },
 ];

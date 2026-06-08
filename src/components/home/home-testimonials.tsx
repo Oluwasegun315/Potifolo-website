@@ -3,6 +3,7 @@ import { Star } from "lucide-react";
 import { FiArrowRight } from "react-icons/fi";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { testimonials } from "@/data/testimonials";
 
 export function HomeTestimonials() {
@@ -25,9 +26,11 @@ export function HomeTestimonials() {
           <Card key={t.name} className="glow-border">
             <CardContent className="p-6">
               <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-violet-500/30 bg-violet-500/15 font-bold text-violet-200">
-                  {t.avatar}
-                </div>
+                <Avatar size="lg" className="border border-violet-500/30 bg-violet-500/15">
+                  <AvatarFallback className="bg-violet-500/20 font-bold text-violet-200">
+                    {t.avatar}
+                  </AvatarFallback>
+                </Avatar>
                 <div>
                   <p className="font-semibold text-white">{t.name}</p>
                   <p className="text-xs text-white/45">{t.role}</p>

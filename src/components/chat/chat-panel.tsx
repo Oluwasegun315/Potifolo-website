@@ -10,6 +10,7 @@ import {
 } from "@/lib/chat-assistant";
 import { ChatMessageBubble } from "./chat-message-bubble";
 import { ChatInputForm } from "./chat-input-form";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 type ChatPanelProps = {
   onClose: () => void;
@@ -83,19 +84,18 @@ export const ChatPanel = memo(function ChatPanel({ onClose }: ChatPanelProps) {
         </button>
       </div>
 
-      <div
-        ref={scrollRef}
-        className="flex-1 space-y-3 overflow-y-auto bg-zinc-50/50 p-4 overscroll-contain dark:bg-transparent"
-      >
-        {messages.map((msg) => (
-          <ChatMessageBubble key={msg.id} role={msg.role} content={msg.content} />
-        ))}
-        {loading && (
-          <div className="mr-auto rounded-2xl border border-violet-500/15 bg-violet-50 px-4 py-3 text-xs text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/50">
-            Typing…
-          </div>
-        )}
-      </div>
+      <ScrollArea className="flex-1 bg-zinc-50/50 dark:bg-transparent">
+        <div ref={scrollRef} className="space-y-3 p-4">
+          {messages.map((msg) => (
+            <ChatMessageBubble key={msg.id} role={msg.role} content={msg.content} />
+          ))}
+          {loading && (
+            <div className="mr-auto rounded-2xl border border-violet-500/15 bg-violet-50 px-4 py-3 text-xs text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/50">
+              Typing…
+            </div>
+          )}
+        </div>
+      </ScrollArea>
 
       {showQuickActions && (
         <div className="flex flex-wrap gap-2 border-t border-violet-500/10 bg-white px-3 py-2 dark:border-white/[0.06] dark:bg-transparent">

@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
 import { navLinks } from "@/data/site";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { useScrollThreshold } from "@/hooks/use-scroll-threshold";
 import { cn } from "@/lib/utils";
 
@@ -75,14 +76,22 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            <ThemeToggle />
-            <Link
-              href="/hire-me"
-              className="btn-premium hidden items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold text-white sm:flex"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-              Hire Me
-            </Link>
+            <Tooltip>
+              <TooltipTrigger className="inline-flex">
+                <ThemeToggle />
+              </TooltipTrigger>
+              <TooltipContent>Switch light / dark mode</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger
+                className="btn-premium hidden items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold text-white sm:inline-flex"
+                render={<Link href="/hire-me" />}
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+                Hire Me
+              </TooltipTrigger>
+              <TooltipContent>Start your project — open for work</TooltipContent>
+            </Tooltip>
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
