@@ -5,8 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  color-scheme: light;
   --muted: oklch(0.97 0 0);
-  --accent: oklch(0.97 0 0);
+  --accent: #8b5cf6;
   --accent-bright: #f472b6;
   --accent-cyan: #67e8f9;
   --accent-dim: #8b5cf6;
@@ -267,6 +268,7 @@ body {
 }
 
 .dark {
+  color-scheme: dark;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -310,4 +312,95 @@ body {
   html {
     @apply font-sans;
   }
+}
+
+/* Light mode — portfolio surfaces (toggle switch) */
+html:not(.dark) body {
+  background-color: #f8f6fc;
+  background-image:
+    radial-gradient(ellipse 90% 60% at 50% -15%, rgba(139, 92, 246, 0.1), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 100% 50%, rgba(244, 114, 182, 0.05), transparent 50%);
+  color: #1a1625;
+}
+
+html:not(.dark) .text-white {
+  color: #1a1625;
+}
+
+html:not(.dark) .text-white\/80 {
+  color: rgb(26 22 37 / 0.8);
+}
+
+html:not(.dark) .text-white\/70 {
+  color: rgb(26 22 37 / 0.7);
+}
+
+html:not(.dark) .text-white\/60 {
+  color: rgb(26 22 37 / 0.6);
+}
+
+html:not(.dark) .text-white\/55 {
+  color: rgb(26 22 37 / 0.55);
+}
+
+html:not(.dark) .text-white\/50 {
+  color: rgb(26 22 37 / 0.5);
+}
+
+html:not(.dark) .text-white\/45 {
+  color: rgb(26 22 37 / 0.45);
+}
+
+html:not(.dark) .text-white\/40 {
+  color: rgb(26 22 37 / 0.4);
+}
+
+html:not(.dark) .text-white\/35 {
+  color: rgb(26 22 37 / 0.35);
+}
+
+html:not(.dark) .text-white\/30 {
+  color: rgb(26 22 37 / 0.3);
+}
+
+html:not(.dark) .border-white\/10 {
+  border-color: rgb(26 22 37 / 0.1);
+}
+
+html:not(.dark) .border-white\/15 {
+  border-color: rgb(26 22 37 / 0.12);
+}
+
+html:not(.dark) .border-white\/20 {
+  border-color: rgb(26 22 37 / 0.15);
+}
+
+html:not(.dark) .bg-white\/5 {
+  background-color: rgb(139 92 246 / 0.06);
+}
+
+html:not(.dark) .bg-white\/10 {
+  background-color: rgb(139 92 246 / 0.08);
+}
+
+html:not(.dark) .card-premium {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(139, 92, 246, 0.12);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.08);
+}
+
+html:not(.dark) .glass {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(139, 92, 246, 0.12);
+}
+
+html:not(.dark) .theme-toggle {
+  border-color: rgba(139, 92, 246, 0.25);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+html:not(.dark) .grid-bg {
+  background-image:
+    linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
 }

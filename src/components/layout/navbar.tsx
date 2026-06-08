@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
 import { navLinks } from "@/data/site";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { useScrollThreshold } from "@/hooks/use-scroll-threshold";
 import { cn } from "@/lib/utils";
 
@@ -74,12 +75,7 @@ export function Navbar() {
           </div>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <Link
-              href="/contact"
-              className="text-xs font-medium uppercase tracking-wider text-white/60 hover:text-white"
-            >
-              Contact
-            </Link>
+            <ThemeToggle />
             <Link
               href="/hire-me"
               className="btn-premium flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold text-white"
@@ -89,19 +85,22 @@ export function Navbar() {
             </Link>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white lg:hidden"
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <FiX size={20} /> : <FiMenu size={20} />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <button
+              type="button"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+            </button>
+          </div>
         </nav>
       </header>
 
       {mobileOpen && (
-        <div className="fixed inset-0 z-[99] flex flex-col bg-[#0a0812] lg:hidden">
+        <div className="fixed inset-0 z-[99] flex flex-col bg-[#f8f6fc] dark:bg-[#0a0812] lg:hidden">
           <div className="flex flex-1 flex-col justify-center gap-2 px-8 pt-24">
             {navLinks.map((link) => (
               <Link
@@ -115,12 +114,15 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/hire-me"
-              className="btn-premium mt-6 inline-flex w-fit rounded-full px-8 py-3 font-semibold text-white"
-            >
-              Hire Me
-            </Link>
+            <div className="mt-8 flex items-center gap-4">
+              <ThemeToggle />
+              <Link
+                href="/hire-me"
+                className="btn-premium inline-flex rounded-full px-8 py-3 font-semibold text-white"
+              >
+                Hire Me
+              </Link>
+            </div>
           </div>
         </div>
       )}

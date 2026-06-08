@@ -56,9 +56,9 @@ export function HeroProjectGrid() {
         <ProjectRow tiles={row2} />
         <ProjectRow tiles={row3} />
       </div>
-      <div className="absolute inset-0 bg-[#0a0812]/78" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_42%,transparent_0%,#0a0812_70%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0812]/50 via-transparent to-[#0a0812]/92" />
+      <div className="absolute inset-0 bg-[#f8f6fc]/82 dark:bg-[#0a0812]/78" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_42%,transparent_0%,#f8f6fc_70%)] dark:bg-[radial-gradient(ellipse_65%_55%_at_50%_42%,transparent_0%,#0a0812_70%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f8f6fc]/55 via-transparent to-[#f8f6fc]/94 dark:from-[#0a0812]/50 dark:to-[#0a0812]/92" />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Syne } from "next/font/google";
 import "./globals.css";
 import { AppProviders } from "@/providers/app-providers";
+import { ThemeScript } from "@/components/theme/theme-script";
 import { siteConfig } from "@/data/site";
 
 const geistSans = Geist({
@@ -69,8 +70,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} dark`}
+      suppressHydrationWarning
     >
-      <body className="min-h-screen font-sans text-white antialiased">
+      <head>
+        <ThemeScript />
+      </head>
+      <body className="min-h-screen font-sans antialiased">
         <AppProviders>{children}</AppProviders>
       </body>
     </html>
