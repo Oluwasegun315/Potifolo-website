@@ -27,7 +27,7 @@ export const ChatInputForm = memo(function ChatInputForm({ loading, onSend }: Ch
   };
 
   return (
-    <div className="border-t border-white/10 p-3">
+    <div className="border-t border-violet-500/15 bg-white p-3 dark:border-white/10 dark:bg-transparent">
       <form onSubmit={handleSubmit} className="flex gap-2">
         <input
           ref={inputRef}
@@ -35,7 +35,7 @@ export const ChatInputForm = memo(function ChatInputForm({ loading, onSend }: Ch
           defaultValue=""
           onInput={(e) => setCanSend(e.currentTarget.value.trim().length > 0)}
           placeholder="Ask about services, timeline, hire…"
-          className="flex-1 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-white/35 focus:border-violet-500/50 focus:outline-none"
+          className="flex-1 rounded-xl border border-violet-500/25 bg-zinc-50 px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-violet-500/60 focus:outline-none dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-white/35 dark:focus:border-violet-500/50"
           disabled={loading}
           autoComplete="off"
           spellCheck={false}
@@ -52,20 +52,23 @@ export const ChatInputForm = memo(function ChatInputForm({ loading, onSend }: Ch
       <div className="mt-2 space-y-1 text-center">
         <a
           href={`mailto:${siteConfig.email}`}
-          className="block truncate text-[11px] font-medium text-violet-300 hover:text-accent"
+          className="block truncate text-[11px] font-medium text-violet-700 hover:text-violet-900 dark:text-violet-300 dark:hover:text-accent"
         >
           {siteConfig.email}
         </a>
         <div className="flex flex-wrap justify-center gap-2">
-          <Link href="/hire-me" className="text-[10px] font-medium text-accent hover:underline">
+          <Link
+            href="/hire-me"
+            className="text-[10px] font-medium text-violet-700 hover:underline dark:text-accent"
+          >
             Hire Me
           </Link>
-          <span className="text-white/20">·</span>
+          <span className="text-zinc-300 dark:text-white/20">·</span>
           <a
             href={siteConfig.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[10px] font-medium text-white/50 hover:text-accent"
+            className="text-[10px] font-medium text-zinc-500 hover:text-violet-700 dark:text-white/50 dark:hover:text-accent"
           >
             WhatsApp
           </a>

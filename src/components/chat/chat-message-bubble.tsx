@@ -19,8 +19,8 @@ export const ChatMessageBubble = memo(function ChatMessageBubble({
       className={cn(
         "max-w-[90%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed",
         role === "user"
-          ? "ml-auto bg-violet-600/80 text-white"
-          : "mr-auto border border-white/[0.08] bg-white/[0.04] text-white/75"
+          ? "ml-auto bg-violet-600 text-white"
+          : "mr-auto border border-violet-500/20 bg-white text-zinc-700 shadow-sm dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-white/75 dark:shadow-none"
       )}
     >
       {formatText(content)}
