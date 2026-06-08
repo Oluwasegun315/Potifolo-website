@@ -72,10 +72,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} dark`}
       suppressHydrationWarning
     >
-      <head>
-        <ThemeScript />
-      </head>
       <body className="min-h-screen font-sans antialiased">
+        <ThemeScript />
         <AppProviders>{children}</AppProviders>
       </body>
     </html>

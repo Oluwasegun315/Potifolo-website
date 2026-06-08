@@ -74,23 +74,19 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="flex items-center gap-2 sm:gap-3">
             <ThemeToggle />
             <Link
               href="/hire-me"
-              className="btn-premium flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold text-white"
+              className="btn-premium hidden items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold text-white sm:flex"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
               Hire Me
             </Link>
-          </div>
-
-          <div className="flex items-center gap-2 lg:hidden">
-            <ThemeToggle />
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white"
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white lg:hidden"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <FiX size={20} /> : <FiMenu size={20} />}

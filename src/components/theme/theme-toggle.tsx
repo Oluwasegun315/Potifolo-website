@@ -16,8 +16,8 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       onClick={toggleTheme}
       className={cn(
-        "theme-toggle relative flex h-9 w-[4.5rem] shrink-0 items-center rounded-full border p-1 transition-colors",
-        "hover:border-violet-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/50",
+        "theme-toggle relative flex h-10 w-[4.75rem] shrink-0 items-center rounded-full border border-white/25 bg-white/10 p-1 shadow-[0_0_12px_rgba(139,92,246,0.2)] transition-colors",
+        "hover:border-violet-400/60 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/50",
         className
       )}
     >

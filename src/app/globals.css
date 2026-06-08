@@ -394,9 +394,15 @@ html:not(.dark) .glass {
   border-color: rgba(139, 92, 246, 0.12);
 }
 
+.theme-toggle {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+}
+
 html:not(.dark) .theme-toggle {
-  border-color: rgba(139, 92, 246, 0.25);
-  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(139, 92, 246, 0.35);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.15);
 }
 
 html:not(.dark) .grid-bg {
