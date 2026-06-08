@@ -16,7 +16,7 @@ export function FeaturedProjectTitle({ title, technologies }: FeaturedProjectTit
   return (
     <HoverCard>
       <HoverCardTrigger className="block w-full cursor-default text-left">
-        <h3 className="font-display mt-2 text-xl font-bold text-white underline-offset-4 hover:underline">
+        <h3 className="font-display mt-2 text-xl font-bold text-zinc-900 underline-offset-4 hover:underline dark:text-white">
           {title}
         </h3>
       </HoverCardTrigger>

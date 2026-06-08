@@ -42,7 +42,7 @@ export function FullStackSection() {
               >
                 <CardHeader>
                   <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl border border-violet-500/25 bg-violet-500/10">
-                    <Icon className="h-5 w-5 text-violet-300" />
+                    <Icon className="h-5 w-5 text-violet-600 dark:text-violet-300" />
                   </div>
                   <CardTitle>{layer.title}</CardTitle>
                   <CardDescription>{layer.description}</CardDescription>
@@ -69,11 +69,13 @@ export function FullStackSection() {
             return (
               <div
                 key={pillar.title}
-                className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-5"
+                className="rounded-2xl border border-violet-500/15 bg-violet-50/50 p-5 dark:border-white/[0.07] dark:bg-white/[0.02]"
               >
-                <Icon className="mb-3 h-5 w-5 text-fuchsia-400" />
-                <h3 className="font-display font-semibold text-white">{pillar.title}</h3>
-                <p className="mt-2 text-sm text-white/50">{pillar.description}</p>
+                <Icon className="mb-3 h-5 w-5 text-fuchsia-600 dark:text-fuchsia-400" />
+                <h3 className="font-display font-semibold text-zinc-900 dark:text-white">
+                  {pillar.title}
+                </h3>
+                <p className="mt-2 text-sm text-zinc-600 dark:text-white/50">{pillar.description}</p>
               </div>
             );
           })}
@@ -82,16 +84,12 @@ export function FullStackSection() {
         <Card className="mt-10 glow-border overflow-hidden">
           <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
+              <p className="text-xs font-medium uppercase tracking-[0.25em] text-violet-600 dark:text-accent">
                 Stack I ship with
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {techStack.map((tech) => (
-                  <Badge
-                    key={tech}
-                    variant="outline"
-                    className="normal-case tracking-normal text-white/75"
-                  >
+                  <Badge key={tech} variant="outline" className="normal-case tracking-normal">
                     {tech}
                   </Badge>
                 ))}

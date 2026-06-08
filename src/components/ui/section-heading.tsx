@@ -24,15 +24,15 @@ export function SectionHeading({
       )}
     >
       {label && (
-        <span className="mb-4 inline-block text-xs font-medium uppercase tracking-[0.3em] text-accent">
+        <span className="mb-4 inline-block text-xs font-medium uppercase tracking-[0.3em] text-violet-600 dark:text-accent">
           {label}
         </span>
       )}
-      <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+      <h2 className="font-display text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl md:text-5xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base leading-relaxed text-white/60 sm:text-lg">
+        <p className="mt-4 text-base leading-relaxed text-zinc-600 dark:text-white/60 sm:text-lg">
           {description}
         </p>
       )}

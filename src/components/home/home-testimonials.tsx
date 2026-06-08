@@ -17,7 +17,7 @@ export function HomeTestimonials() {
         description="Real feedback from founders and brands — the kind of trust your visitors need before they hire."
       />
       <p className="-mt-10 mb-8 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/25 bg-violet-500/10 px-4 py-1.5 text-xs font-medium text-violet-200">
+        <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-100 px-4 py-1.5 text-xs font-medium text-violet-800 dark:border-violet-500/25 dark:bg-violet-500/10 dark:text-violet-200">
           ★ 4.9/5 average client satisfaction
         </span>
       </p>
@@ -32,8 +32,8 @@ export function HomeTestimonials() {
                   </AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-semibold text-white">{t.name}</p>
-                  <p className="text-xs text-white/45">{t.role}</p>
+                  <p className="font-semibold text-zinc-900 dark:text-white">{t.name}</p>
+                  <p className="text-xs text-zinc-500 dark:text-white/45">{t.role}</p>
                 </div>
               </div>
               <div className="mb-3 flex gap-0.5">
@@ -41,7 +41,9 @@ export function HomeTestimonials() {
                   <Star key={i} className="h-4 w-4 fill-violet-400 text-violet-400" />
                 ))}
               </div>
-              <p className="text-sm italic leading-relaxed text-white/55">&ldquo;{t.content}&rdquo;</p>
+              <p className="text-sm italic leading-relaxed text-zinc-600 dark:text-white/55">
+                &ldquo;{t.content}&rdquo;
+              </p>
             </CardContent>
           </Card>
         ))}
