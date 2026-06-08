@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/footer";
 import { ClientWidgets } from "@/providers/client-widgets";
 import { ThemeProvider } from "@/providers/theme-provider";
 
-/** Server shell — only chat/back-to-top are client islands. */
+/** Server shell — floating dock (chat) is a client island. */
 export function AppProviders({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>

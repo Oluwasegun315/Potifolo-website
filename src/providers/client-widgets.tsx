@@ -2,21 +2,11 @@
 
 import dynamic from "next/dynamic";
 
-const PortfolioChat = dynamic(
-  () => import("@/components/chat/portfolio-chat").then((m) => m.PortfolioChat),
-  { ssr: false, loading: () => null }
-);
-
-const BackToTop = dynamic(
-  () => import("@/components/layout/back-to-top").then((m) => m.BackToTop),
+const FloatingDock = dynamic(
+  () => import("@/components/layout/floating-dock").then((m) => m.FloatingDock),
   { ssr: false, loading: () => null }
 );
 
 export function ClientWidgets() {
-  return (
-    <>
-      <PortfolioChat />
-      <BackToTop />
-    </>
-  );
+  return <FloatingDock />;
 }
